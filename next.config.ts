@@ -39,6 +39,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+
+  webpack: (config) => {
+    config.optimization = config.optimization || {};
+    config.optimization.splitChunks = config.optimization.splitChunks || {};
+    config.optimization.splitChunks.maxSize = 512000;
+    config.optimization.splitChunks.maxAsyncRequests = 10;
+    config.optimization.splitChunks.maxInitialRequests = 10;
+    return config;
+  },
 };
 
 /**
