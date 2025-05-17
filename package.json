@@ -136,7 +136,7 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@content-collections/cli": "^0.1.6",
-    "@opennextjs/cloudflare": "^1.0.0-beta.4",
+    "@opennextjs/cloudflare": "^1.0.3",
     "@tailwindcss/postcss": "^4.0.14",
     "@types/mdx": "^2.0.13",
     "@types/node": "^20",
