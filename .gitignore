@@ -44,3 +44,9 @@ next-env.d.ts
 .content-collections
 # OpenNext build output
 .open-next
+
+# wrangler files
+.wrangler
+.dev.vars
+.dev.vars*
+!.dev.vars.example

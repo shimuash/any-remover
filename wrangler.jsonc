@@ -8,8 +8,15 @@
   "name": "mksaas-template",
   "compatibility_date": "2024-12-30",
   "compatibility_flags": [
+    // Enable Node.js API
+    // see https://developers.cloudflare.com/workers/configuration/compatibility-flags/#nodejs-compatibility-flag
     "nodejs_compat",
-    "nodejs_compat_populate_process_env"
+    // Enable auto-populating process.env
+    // see https://developers.cloudflare.com/workers/configuration/compatibility-flags/#enable-auto-populating-processenv
+    "nodejs_compat_populate_process_env",
+    // Allow to fetch URLs in your app
+    // see https://developers.cloudflare.com/workers/configuration/compatibility-flags/#global-fetch-strictly-public
+    "global_fetch_strictly_public"
   ],
   // Minification helps to keep the Worker bundle size down and improve start up time.
   "minify": true,
