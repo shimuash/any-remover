@@ -13,8 +13,7 @@ import {
 import { formatDate } from '@/lib/formatter';
 import { constructMetadata } from '@/lib/metadata';
 import { getUrlWithLocale } from '@/lib/urls/urls';
-import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
-import { CalendarIcon, ClockIcon, FileTextIcon } from 'lucide-react';
+import { CalendarIcon, FileTextIcon } from 'lucide-react';
 import type { Metadata } from 'next';
 import type { Locale } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
@@ -22,6 +21,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 import '@/styles/mdx.css';
+import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 
 /**
  * get related posts, random pick from all posts with same locale, different slug,
@@ -85,13 +85,6 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
   const { date, title, description, image, author, categories } = post.data;
   const publishDate = formatDate(new Date(date));
-  // const toc = await getTableOfContents(post.data.body);
-  // console.log('post.data.toc', post.data.toc);
-
-  // NOTICE: we can not call post.data.content here in Cloudflare Worker environment
-  // const wordCount = post.data.content.split(/\s+/).length;
-  // const wordsPerMinute = 200; // average reading speed: 200 words per minute
-  // const estimatedTime = Math.max(Math.ceil(wordCount / wordsPerMinute), 1);
 
   const blogAuthor = authorSource.getPage([author], locale);
   const blogCategories = categorySource
@@ -128,38 +121,14 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
               )}
             </div>
 
-            {/* blog post date and reading time */}
+            {/* blog post date */}
             <div className="flex items-center justify-between gap-2">
-              {blogAuthor && (
-                <div className="flex items-center gap-2">
-                  <div className="relative h-6 w-6 shrink-0">
-                    {blogAuthor.data.avatar && (
-                      <Image
-                        src={blogAuthor.data.avatar}
-                        alt={`avatar for ${blogAuthor.data.name}`}
-                        className="rounded-full object-cover border"
-                        fill
-                      />
-                    )}
-                  </div>
-                  <span className="text-sm text-muted-foreground leading-none my-auto">
-                    {blogAuthor.data.name}
-                  </span>
-                </div>
-              )}
-
               <div className="flex items-center gap-2">
                 <CalendarIcon className="size-4 text-muted-foreground" />
                 <span className="text-sm text-muted-foreground leading-none my-auto">
                   {publishDate}
                 </span>
               </div>
-              {/* <div className="flex items-center gap-2">
-                <ClockIcon className="size-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground leading-none my-auto">
-                  {t('readTime', { minutes: estimatedTime })}
-                </span>
-              </div> */}
             </div>
 
             {/* blog post title */}
@@ -185,7 +154,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         <div>
           <div className="space-y-4 lg:sticky lg:top-24">
             {/* author info */}
-            {/* {blogAuthor && (
+            {blogAuthor && (
               <div className="bg-muted/50 rounded-lg p-6">
                 <h2 className="text-lg font-semibold mb-4">{t('author')}</h2>
                 <div className="flex items-center gap-4">
@@ -202,7 +171,7 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
                   <span className="line-clamp-1">{blogAuthor.data.name}</span>
                 </div>
               </div>
-            )} */}
+            )}
 
             {/* categories */}
             <div className="bg-muted/50 rounded-lg p-6">
@@ -224,21 +193,16 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
               </ul>
             </div>
 
-            {/* table of contents, https://fumadocs.dev/docs/ui/components/inline-toc */}
-            <div className="bg-muted/50 rounded-lg p-6 hidden lg:block">
-              <h2 className="text-lg font-semibold mb-4">
-                {t('tableOfContents')}
-              </h2>
-              <div className="max-h-[calc(100vh-18rem)] overflow-y-auto">
-                {post.data.toc && (
-                  <InlineTOC
-                    items={post.data.toc}
-                    open={true}
-                    defaultOpen={true}
-                    className="prose"
-                  />
-                )}
-              </div>
+            {/* table of contents */}
+            <div className="max-h-[calc(100vh-18rem)] overflow-y-auto">
+              {post.data.toc && (
+                <InlineTOC
+                  items={post.data.toc}
+                  open={true}
+                  defaultOpen={true}
+                  className="bg-muted/50 border-none"
+                />
+              )}
             </div>
           </div>
         </div>
