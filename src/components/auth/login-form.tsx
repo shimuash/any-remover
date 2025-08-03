@@ -69,7 +69,7 @@ export const LoginForm = ({
     : z.string().optional();
 
   const LoginSchema = z.object({
-    email: z.string().email({
+    email: z.email({
       message: t('emailRequired'),
     }),
     password: z.string().min(1, {

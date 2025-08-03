@@ -23,6 +23,7 @@ import { createDeepSeek } from '@ai-sdk/deepseek';
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { createOpenAI } from '@ai-sdk/openai';
 import FirecrawlApp from '@mendable/firecrawl-js';
+import { createOpenRouter } from '@openrouter/ai-sdk-provider';
 import { generateObject } from 'ai';
 import { type NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
@@ -218,7 +219,7 @@ async function analyzeContent(
           break;
         case 'gemini':
           model = createGoogleGenerativeAI({
-            apiKey: process.env.GOOGLE_API_KEY,
+            apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
           }).chat(webContentAnalyzerConfig.gemini.model);
           temperature = webContentAnalyzerConfig.gemini.temperature;
           maxTokens = webContentAnalyzerConfig.gemini.maxTokens;
@@ -229,6 +230,13 @@ async function analyzeContent(
           }).chat(webContentAnalyzerConfig.deepseek.model);
           temperature = webContentAnalyzerConfig.deepseek.temperature;
           maxTokens = webContentAnalyzerConfig.deepseek.maxTokens;
+          break;
+        case 'openrouter':
+          model = createOpenRouter({
+            apiKey: process.env.OPENROUTER_API_KEY,
+          }).chat(webContentAnalyzerConfig.openrouter.model);
+          temperature = webContentAnalyzerConfig.openrouter.temperature;
+          maxTokens = webContentAnalyzerConfig.openrouter.maxTokens;
           break;
         default:
           throw new WebContentAnalyzerError(
@@ -254,7 +262,7 @@ async function analyzeContent(
           - Ensure the title and description are meaningful and based on the actual content
         `,
         temperature,
-        maxTokens,
+        maxOutputTokens: maxTokens,
       });
 
       return {
@@ -336,7 +344,7 @@ export async function POST(req: NextRequest) {
     if (!urlValidation.success) {
       const urlError = new WebContentAnalyzerError(
         ErrorType.VALIDATION,
-        urlValidation.error.errors[0]?.message || 'Invalid URL',
+        urlValidation.error.issues[0]?.message || 'Invalid URL',
         'Please enter a valid URL starting with http:// or https://',
         ErrorSeverity.MEDIUM,
         false

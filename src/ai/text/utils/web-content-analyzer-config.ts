@@ -117,6 +117,13 @@ export const webContentAnalyzerConfig = {
     temperature: 0.1,
     maxTokens: 2000,
   },
+  openrouter: {
+    model: 'openrouter/horizon-beta',
+    // model: 'x-ai/grok-3-beta',
+    // model: 'openai/gpt-4o-mini',
+    temperature: 0.1,
+    maxTokens: 2000,
+  },
 } as const;
 
 /**

@@ -71,6 +71,7 @@ export interface FeaturesConfig {
   enableDiscordWidget?: boolean;      // Whether to enable the discord widget, deprecated
   enableCrispChat?: boolean;          // Whether to enable the crisp chat
   enableUpgradeCard?: boolean;        // Whether to enable the upgrade card in the sidebar
+  enableUpdateAvatar?: boolean;       // Whether to enable the update avatar in settings
   enableAffonsoAffiliate?: boolean;   // Whether to enable affonso affiliate
   enablePromotekitAffiliate?: boolean;   // Whether to enable promotekit affiliate
   enableDatafastRevenueTrack?: boolean;   // Whether to enable datafast revenue tracking

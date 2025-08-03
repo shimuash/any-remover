@@ -97,9 +97,8 @@ export interface LoadingStatesProps {
 
 // URL Validation Schema
 export const urlSchema = z
-  .string()
+  .url()
   .min(1, 'URL is required')
-  .url('Please enter a valid URL')
   .refine(
     (url) => url.startsWith('http://') || url.startsWith('https://'),
     'URL must start with http:// or https://'
@@ -114,13 +113,13 @@ export const analysisResultsSchema = z.object({
   pricing: z.string().default('Not specified'),
   useCases: z.array(z.string()).default([]),
   url: urlSchema,
-  analyzedAt: z.string().datetime(),
+  analyzedAt: z.iso.datetime(),
 });
 
 // API Request Schema
 export const analyzeContentRequestSchema = z.object({
   url: urlSchema,
-  modelProvider: z.enum(['openai', 'gemini', 'deepseek']),
+  modelProvider: z.enum(['openai', 'gemini', 'deepseek', 'openrouter']),
 });
 
 // API Response Schema

@@ -36,6 +36,7 @@ export const websiteConfig: WebsiteConfig = {
     enableDiscordWidget: false,
     enableCrispChat: process.env.NEXT_PUBLIC_DEMO_WEBSITE === 'true',
     enableUpgradeCard: true,
+    enableUpdateAvatar: true,
     enableAffonsoAffiliate: false,
     enablePromotekitAffiliate: false,
     enableDatafastRevenueTrack: false,
