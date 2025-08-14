@@ -37,7 +37,7 @@
     "@dnd-kit/modifiers": "^9.0.0",
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
-    "@hookform/resolvers": "^4.1.0",
+    "@hookform/resolvers": "^5.2.1",
     "@marsidev/react-turnstile": "^1.1.0",
     "@mendable/firecrawl-js": "^1.29.1",
     "@next/third-parties": "^15.3.0",
@@ -114,7 +114,7 @@
     "react": "^19.0.0",
     "react-day-picker": "8.10.1",
     "react-dom": "^19.0.0",
-    "react-hook-form": "^7.54.2",
+    "react-hook-form": "^7.62.0",
     "react-remove-scroll": "^2.6.3",
     "react-resizable-panels": "^2.1.7",
     "react-tweet": "^3.2.2",
@@ -132,7 +132,7 @@
     "use-intl": "^3.26.5",
     "use-media": "^1.5.0",
     "vaul": "^1.1.2",
-    "zod": "^4.0.14",
+    "zod": "^4.0.17",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
