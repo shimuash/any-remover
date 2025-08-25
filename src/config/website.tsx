@@ -8,15 +8,17 @@ import type { WebsiteConfig } from '@/types';
  * https://mksaas.com/docs/config/website
  */
 export const websiteConfig: WebsiteConfig = {
-  metadata: {
+  ui: {
     theme: {
       defaultTheme: 'default',
       enableSwitch: true,
     },
     mode: {
-      defaultMode: 'system',
+      defaultMode: 'dark',
       enableSwitch: true,
     },
+  },
+  metadata: {
     images: {
       ogImage: '/og.png',
       logoLight: '/logo.png',
@@ -33,7 +35,6 @@ export const websiteConfig: WebsiteConfig = {
     },
   },
   features: {
-    enableDiscordWidget: false,
     enableUpgradeCard: true,
     enableUpdateAvatar: true,
     enableAffonsoAffiliate: false,
