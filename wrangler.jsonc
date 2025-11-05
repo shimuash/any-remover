@@ -5,7 +5,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
-  "name": "mksaas-template-cloudflare",
+  "name": "any-remover",
   "compatibility_date": "2024-12-30",
   "compatibility_flags": [
     // Enable Node.js API
@@ -61,13 +61,13 @@
    * https://opennext.js.org/cloudflare/howtos/db#hyperdrive-example
    * https://developers.cloudflare.com/workers/tutorials/postgres/#8-use-hyperdrive-to-accelerate-queries
    */
-  "hyperdrive": [
-    {
-      "binding": "HYPERDRIVE",
-      "id": "8ba4508b28cf42f987f3533c1f09433c",
-      "localConnectionString": "postgresql://postgres:postgres@localhost:5432/postgres"
-    }
-  ],
+  // "hyperdrive": [
+  //   {
+  //     "binding": "HYPERDRIVE",
+  //     "id": "8ba4508b28cf42f987f3533c1f09433c",
+  //     "localConnectionString": "postgresql://postgres:postgres@localhost:5432/postgres"
+  //   }
+  // ],
 
   /**
    * Environment Variables

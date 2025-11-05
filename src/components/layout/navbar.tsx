@@ -218,7 +218,8 @@ export function Navbar({ scroll }: NavBarProps) {
           {/* navbar right show sign in or user */}
           <div className="flex items-center gap-x-4">
             {!mounted || isPending ? (
-              <Skeleton className="size-8 border rounded-full" />
+              // <Skeleton className="size-8 border rounded-full" />
+              null
             ) : currentUser ? (
               <>
                 {/* <CreditsBalanceButton /> */}
@@ -230,7 +231,7 @@ export function Navbar({ scroll }: NavBarProps) {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="cursor-pointer"
+                    className="cursor-pointer rounded-full"
                   >
                     {t('Common.login')}
                   </Button>
@@ -242,7 +243,8 @@ export function Navbar({ scroll }: NavBarProps) {
                     buttonVariants({
                       variant: 'default',
                       size: 'sm',
-                    })
+                    }),
+                    'rounded-full'
                   )}
                 >
                   {t('Common.signUp')}

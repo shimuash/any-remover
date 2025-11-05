@@ -11,11 +11,11 @@ export const websiteConfig: WebsiteConfig = {
   ui: {
     theme: {
       defaultTheme: 'default',
-      enableSwitch: true,
+      enableSwitch: false,
     },
     mode: {
-      defaultMode: 'dark',
-      enableSwitch: true,
+      defaultMode: 'light',
+      enableSwitch: false,
     },
   },
   metadata: {
@@ -52,8 +52,8 @@ export const websiteConfig: WebsiteConfig = {
   },
   auth: {
     enableGoogleLogin: true,
-    enableGithubLogin: true,
-    enableCredentialLogin: true,
+    enableGithubLogin: false,
+    enableCredentialLogin: false,
   },
   i18n: {
     defaultLocale: 'en',
