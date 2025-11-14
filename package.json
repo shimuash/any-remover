@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "cf-dev": "next dev -p 8787",
+    "dev": "next dev -p 8787",
     "build": "next build",
     "start": "next start",
     "postinstall": "fumadocs-mdx",
