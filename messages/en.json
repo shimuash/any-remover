@@ -1109,5 +1109,47 @@
   "AIAudioPage": {
     "title": "AI Audio",
     "description": "MkSaaS lets you make AI SaaS in days, simply and effortlessly"
+  },
+  "ImageEditor": {
+    "title": "Edit Image",
+    "close": "Close",
+    "tools": {
+      "brush": "Brush",
+      "eraser": "Eraser",
+      "chat": "Edit with prompt",
+      "undo": "Undo",
+      "redo": "Redo",
+      "download": "Download",
+      "compare": "Compare",
+      "debug": "Debug",
+      "clearMask": "Clear",
+      "upscale": "Upscale"
+    },
+    "brushSize": "Brush Size",
+    "remove": "Remove",
+    "removing": "Removing...",
+    "removeSuccess": "Object removed successfully",
+    "retry": "Retry",
+    "chatPlaceholder": "Describe the changes you want...",
+    "chatSend": "Send",
+    "chatSuccess": "Image edited successfully",
+    "zoom": {
+      "zoomIn": "Zoom In",
+      "zoomOut": "Zoom Out",
+      "resetZoom": "Fit to Window"
+    },
+    "compare": {
+      "original": "Original",
+      "current": "Current"
+    },
+    "errors": {
+      "fileTooLarge": "Image size cannot exceed 10MB",
+      "resolutionTooHigh": "Image resolution too high, auto-compressed",
+      "unsupportedFormat": "Only JPEG, PNG, WebP formats are supported",
+      "networkError": "Network error, please check your connection",
+      "serverError": "Server is busy, please try again later",
+      "timeout": "Processing timeout, please retry",
+      "processingFailed": "Image processing failed, please retry"
+    }
   }
 }

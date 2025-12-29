@@ -7,7 +7,7 @@ export default async function HeroSection() {
   const t = await getTranslations('HomePage.remover');
 
   return (
-    <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 lg:pt-24 md:pb-24">
+    <section className="relative overflow-hidden pt-12 pb-16 md:pt-20 lg:pt-24 2xl:pt-28 md:pb-24">
       <Container className="px-6">
         <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-end mb-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight font-title leading-tight">

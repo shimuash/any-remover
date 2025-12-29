@@ -246,6 +246,11 @@ html body[data-scroll-locked] {
   margin-right: 0 !important;
 }
 
+/* Override scroll-locked for ImageEditorDialog to properly lock body scroll */
+html body[data-scroll-locked][data-image-editor-open] {
+  overflow: hidden !important;
+}
+
 /* Fix for Fumadocs empty banner appearing in Cloudflare Worker */
 /* This targets the specific banner issue where empty:hidden doesn't work properly */
 div[class*="border-t"][class*="bg-fd-secondary"]:not(:has(*)):not(

@@ -1098,5 +1098,46 @@
   "AIAudioPage": {
     "title": "AI 音频",
     "description": "MkSaaS 让您在几天内轻松构建您的 AI SaaS，简单且毫不费力"
+  },
+  "ImageEditor": {
+    "title": "编辑图片",
+    "close": "关闭",
+    "tools": {
+      "brush": "画笔",
+      "eraser": "橡皮擦",
+      "chat": "对话",
+      "undo": "撤销",
+      "redo": "重做",
+      "download": "下载",
+      "compare": "对比",
+      "debug": "调试",
+      "clearMask": "清除"
+    },
+    "brushSize": "画笔大小",
+    "remove": "移除",
+    "removing": "移除中...",
+    "removeSuccess": "对象移除成功",
+    "retry": "重试",
+    "chatPlaceholder": "描述你想要的修改...",
+    "chatSend": "发送",
+    "chatSuccess": "图片编辑成功",
+    "zoom": {
+      "zoomIn": "放大",
+      "zoomOut": "缩小",
+      "resetZoom": "适应窗口"
+    },
+    "compare": {
+      "original": "原图",
+      "current": "当前"
+    },
+    "errors": {
+      "fileTooLarge": "图片大小不能超过 10MB",
+      "resolutionTooHigh": "图片分辨率过高，已自动压缩",
+      "unsupportedFormat": "仅支持 JPEG、PNG、WebP 格式",
+      "networkError": "网络连接失败，请检查网络后重试",
+      "serverError": "服务器繁忙，请稍后重试",
+      "timeout": "处理超时，请重试",
+      "processingFailed": "图片处理失败，请重试"
+    }
   }
 }
