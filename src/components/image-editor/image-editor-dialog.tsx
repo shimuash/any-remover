@@ -70,7 +70,10 @@ export default function ImageEditorDialog() {
         <EditorHeader />
 
         {/* Main content area */}
-        <div className="flex-1 relative overflow-hidden" ref={containerRef}>
+        <div
+          className="flex-1 relative overflow-hidden bg-noise"
+          ref={containerRef}
+        >
           {/* Canvas */}
           <EditorCanvas
             containerRef={containerRef}

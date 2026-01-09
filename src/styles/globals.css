@@ -268,3 +268,29 @@ div[class*="border-t"][class*="bg-fd-secondary"]:not(:has(*)):not(
 [class*="fd-secondary"]:empty:not([data-banner-content]) {
   display: none !important;
 }
+
+/* Subtle dot pattern for image editor canvas */
+.bg-noise {
+  position: relative;
+}
+
+.bg-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    oklch(0.5 0 0 / 0.15) 1px,
+    transparent 1px
+  );
+  background-size: 16px 16px;
+}
+
+.dark .bg-noise::before {
+  background-image: radial-gradient(
+    circle,
+    oklch(1 0 0 / 0.08) 1px,
+    transparent 1px
+  );
+}
