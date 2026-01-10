@@ -26,6 +26,7 @@ import {
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useMeasure } from 'react-use';
+import { Separator } from '../ui/separator';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 import ChatPanel from './chat-panel';
 import { useEditorStoreSelector } from './hooks/use-editor-state';
@@ -90,8 +91,8 @@ export default function EditorToolbar({ className }: EditorToolbarProps) {
     >
       {/* Brush size panel above toolbar when brush tool is active */}
       {activeTool === 'brush' && (
-        <>
-          <div className="flex self-start px-1 gap-1">
+        <div className="bg-background rounded-xl px-3 py-2 shadow-lg flex items-center gap-3 w-full">
+          <div className="flex gap-2">
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button
@@ -167,13 +168,12 @@ export default function EditorToolbar({ className }: EditorToolbarProps) {
               <TooltipContent>{t('tools.clearMask')}</TooltipContent>
             </Tooltip>
           </div>
-          <div className="w-full bg-background rounded-xl p-3 space-y-3 max-w-md self-start shadow-lg pb-5">
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-medium">{t('brushSize')}</span>
-              <span className="text-sm text-muted-foreground">
-                {brushSize}px
-              </span>
-            </div>
+
+          <Separator orientation="vertical" />
+
+          <span className="text-sm font-medium">{t('brushSize')}</span>
+
+          <div className="flex items-center gap-3 flex-1">
             <Slider
               value={[brushSize]}
               onValueChange={([value]) => setBrushSize(value)}
@@ -185,12 +185,15 @@ export default function EditorToolbar({ className }: EditorToolbarProps) {
               step={1}
               disabled={isProcessing}
             />
+            <span className="text-sm text-muted-foreground w-10 text-right tabular-nums">
+              {brushSize}px
+            </span>
           </div>
-        </>
+        </div>
       )}
 
       {/* Chat input above toolbar when chat tool is active */}
-      {/* Add 20px to compensate for Toolbar's px-2.5 padding (useMeasure returns content-box width) */}
+      {/* Add 24px to compensate for Toolbar's px-2.5 padding (useMeasure returns content-box width) */}
       <ChatPanel maxWidth={toolbarWidth + 24} />
 
       <Toolbar ref={toolbarRef} size="sm" className="rounded-xl px-3 py-1.5">
