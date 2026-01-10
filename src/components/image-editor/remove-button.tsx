@@ -76,16 +76,20 @@ export function RemoveButton() {
   const isDisabled = !hasMask() || isProcessing;
 
   return (
-    <Button onClick={handleRemove} disabled={isDisabled}>
+    <Button
+      onClick={handleRemove}
+      disabled={isDisabled}
+      className="cursor-pointer"
+    >
       {isProcessing ? (
         <>
           <Spinner />
-          {t('removing')}
+          {t('applying')}
         </>
       ) : (
         <>
           <Sparkles className="size-4" />
-          {t('remove')}
+          {t('apply')}
         </>
       )}
     </Button>

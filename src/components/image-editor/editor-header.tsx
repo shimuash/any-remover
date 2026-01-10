@@ -142,10 +142,20 @@ const EditorHeader = forwardRef<HTMLElement>(function EditorHeader(_, ref) {
         </ToolbarToggleGroup>
         <ToolbarSeparator />
         <ToolbarToggleGroup type="single">
-          <ToolbarToggleItem value="undo" onClick={undo} disabled={!canUndo()}>
+          <ToolbarToggleItem
+            className="cursor-pointer"
+            value="undo"
+            onClick={undo}
+            disabled={!canUndo()}
+          >
             <Undo2 className="size-4" />
           </ToolbarToggleItem>
-          <ToolbarToggleItem value="redo" onClick={redo} disabled={!canRedo()}>
+          <ToolbarToggleItem
+            className="cursor-pointer"
+            value="redo"
+            onClick={redo}
+            disabled={!canRedo()}
+          >
             <Redo2 className="size-4" />
           </ToolbarToggleItem>
         </ToolbarToggleGroup>
@@ -155,8 +165,10 @@ const EditorHeader = forwardRef<HTMLElement>(function EditorHeader(_, ref) {
             value="compare"
             onClick={toggleCompareMode}
             disabled={!canCompare}
+            className="cursor-pointer"
           >
             <SplitSquareHorizontal className="size-4" />
+            {t('tools.compare')}
           </ToolbarToggleItem>
         </ToolbarToggleGroup>
         <ToolbarSeparator />
@@ -167,7 +179,7 @@ const EditorHeader = forwardRef<HTMLElement>(function EditorHeader(_, ref) {
             <Button
               variant="secondary"
               size="sm"
-              className="text-xs focus-visible:outline-none"
+              className="text-xs focus-visible:outline-none cursor-pointer"
               disabled={isCompareMode}
             >
               {zoomPercent}%

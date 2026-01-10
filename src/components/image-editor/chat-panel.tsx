@@ -91,7 +91,7 @@ export default function ChatPanel({ className, maxWidth }: ChatPanelProps) {
   return (
     <InputGroup
       className={cn(
-        'w-full bg-background focus-visible:outline-none rounded-3xl px-3 py-1',
+        'w-full bg-background focus-visible:outline-none rounded-3xl px-2 py-1',
         className
       )}
       style={maxWidth ? { maxWidth } : undefined}
@@ -111,9 +111,13 @@ export default function ChatPanel({ className, maxWidth }: ChatPanelProps) {
           variant="default"
           onClick={handleSubmit}
           disabled={!prompt.trim() || isProcessing}
-          className="ml-auto rounded-full"
+          className="ml-auto rounded-full cursor-pointer"
         >
-          {isProcessing ? <Loader2 className="animate-spin" /> : <ArrowRight />}
+          {isProcessing ? (
+            <Loader2 className="animate-spin" />
+          ) : (
+            <ArrowRight className="size-5" />
+          )}
           <span className="sr-only">Generate</span>
         </InputGroupButton>
       </InputGroupAddon>

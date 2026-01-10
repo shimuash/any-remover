@@ -1103,8 +1103,9 @@
     "title": "编辑图片",
     "close": "关闭",
     "tools": {
-      "brush": "画笔",
+      "brush": "涂抹移除",
       "eraser": "橡皮擦",
+      "paint": "涂抹",
       "chat": "对话",
       "undo": "撤销",
       "redo": "重做",
@@ -1114,8 +1115,8 @@
       "clearMask": "清除"
     },
     "brushSize": "画笔大小",
-    "remove": "移除",
-    "removing": "移除中...",
+    "apply": "应用",
+    "applying": "应用中...",
     "removeSuccess": "对象移除成功",
     "retry": "重试",
     "chatPlaceholder": "描述你想要的修改...",

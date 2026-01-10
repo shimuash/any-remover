@@ -1114,8 +1114,9 @@
     "title": "Edit Image",
     "close": "Close",
     "tools": {
-      "brush": "Brush",
+      "brush": "Brush to Remove",
       "eraser": "Eraser",
+      "paint": "Paint",
       "chat": "Edit with prompt",
       "undo": "Undo",
       "redo": "Redo",
@@ -1126,8 +1127,8 @@
       "upscale": "Upscale"
     },
     "brushSize": "Brush Size",
-    "remove": "Remove",
-    "removing": "Removing...",
+    "apply": "Apply",
+    "applying": "Applying...",
     "removeSuccess": "Object removed successfully",
     "retry": "Retry",
     "chatPlaceholder": "Describe the changes you want...",
