@@ -102,7 +102,7 @@ const EditorHeader = forwardRef<HTMLElement>(function EditorHeader(_, ref) {
           <ToolbarToggleItem
             value="compare"
             onClick={toggleCompareMode}
-            // disabled={!canCompare}
+            disabled={!canCompare}
             className="cursor-pointer"
           >
             <SplitSquareHorizontal className="size-4" />
